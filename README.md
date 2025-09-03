@@ -84,6 +84,22 @@ LINE 14
 
 contoh di file :
 
-database.sql
-.env
-LINE 16
+2025_09_03_024155_create_products_table.php
+2025_09_03_024155_create_categories_table.php
+Product.php
+Category.php
+
+## RESOURCE
+
+perintah buat resource : 
+php artisan make:resource NamaResource
+
+contoh di file :
+
+api.php
+LINE 23-27
+CategoryResource.php
+CategorySeeder.php
+CategoryTest.php
+LINE 17-33
+TestCase.php
