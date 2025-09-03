@@ -103,3 +103,12 @@ CategorySeeder.php
 CategoryTest.php
 LINE 17-33
 TestCase.php
+
+## RESOURCE COLLECTION
+
+contoh di file :
+
+api.php
+LINE 29-33
+CategoryTest.php
+LINE 35-59
