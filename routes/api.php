@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Resources\CategoryResource;
 use App\Http\Resources\CategorySimpleResource;
+use App\Http\Resources\ProductResource;
+use App\Models\Product;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,4 +46,10 @@ Route::get('/categories-custom', function(){
 Route::get('/categories-nested', function(){
     $categories = Category::all();
     return new CategoryCollection($categories);
+});
+
+// DATA WRAP
+Route::get('/product/{id}', function($id){
+    $product = Product::find($id);
+    return new ProductResource($product);
 });

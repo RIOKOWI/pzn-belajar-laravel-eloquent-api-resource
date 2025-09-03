@@ -128,9 +128,6 @@ LINE 62-87
 
 ## NESTED RESOURCE 
 
-perintah buat resource collection : 
-php artisan make:resource NamaResource --collection
-
 contoh di file :
 
 CategorySimpleResource.php
@@ -140,3 +137,14 @@ api.php
 LINE 43-47
 CategoryTest.php
 LINE 89-110
+
+## DATA WRAP
+
+contoh di file :
+
+ProductResource.php
+ProductSeeder.php
+api.php
+LINE 51-55
+ProductTest.php
+LINE 18-43
