@@ -78,4 +78,12 @@ contoh di file :
 
 database.sql
 .env
+LINE 14
+
+## MEMBUAT MODEL
+
+contoh di file :
+
+database.sql
+.env
 LINE 16
