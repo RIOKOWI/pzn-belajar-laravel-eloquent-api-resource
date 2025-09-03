@@ -5,6 +5,7 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Resources\CategoryResource;
+use App\Http\Resources\CategorySimpleResource;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +36,12 @@ Route::get('/categories', function(){
 
 // custom resource collection
 Route::get('/categories-custom', function(){
+    $categories = Category::all();
+    return new CategoryCollection($categories);
+});
+
+// nested resource
+Route::get('/categories-nested', function(){
     $categories = Category::all();
     return new CategoryCollection($categories);
 });

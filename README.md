@@ -125,3 +125,18 @@ api.php
 LINE 36-40
 CategoryTest.php
 LINE 62-87
+
+## NESTED RESOURCE 
+
+perintah buat resource collection : 
+php artisan make:resource NamaResource --collection
+
+contoh di file :
+
+CategorySimpleResource.php
+CategoryCollection.php
+LINE 18
+api.php
+LINE 43-47
+CategoryTest.php
+LINE 89-110
