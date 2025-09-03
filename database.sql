@@ -1,0 +1,3 @@
+CREATE DATABASE belajar_laravel_eloquent_api_resource;
+
+USE belajar_laravel_eloquent_api_resource;
