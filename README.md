@@ -112,3 +112,16 @@ api.php
 LINE 29-33
 CategoryTest.php
 LINE 35-59
+
+## CUSTOM RESOURCE COLLECTION
+
+perintah buat resource collection : 
+php artisan make:resource NamaResource --collection
+
+contoh di file :
+
+CategoryCollection.php
+api.php
+LINE 36-40
+CategoryTest.php
+LINE 62-87

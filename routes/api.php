@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Resources\CategoryCollection;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -30,4 +31,10 @@ Route::get('/categories/{id}', function($id) {
 Route::get('/categories', function(){
     $categories = Category::all();
     return CategoryResource::collection($categories);
+});
+
+// custom resource collection
+Route::get('/categories-custom', function(){
+    $categories = Category::all();
+    return new CategoryCollection($categories);
 });
