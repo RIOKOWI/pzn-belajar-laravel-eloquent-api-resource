@@ -17,7 +17,7 @@ class ProductSeeder extends Seeder
         Category::all()->each(function(Category $category){
             for($i = 0; $i < 5; $i++){
                 $category->products()->create([
-                    'name' => "Products of $category->name",
+                    'name' => "Products $i of $category->name",
                     'price' => rand(100, 1000),
                 ]);
             }

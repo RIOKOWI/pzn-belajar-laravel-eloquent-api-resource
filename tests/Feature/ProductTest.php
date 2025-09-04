@@ -9,6 +9,8 @@ use Database\Seeders\CategorySeeder;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
+use function PHPUnit\Framework\assertContains;
+
 class ProductTest extends TestCase
 {
     /**
@@ -40,5 +42,22 @@ class ProductTest extends TestCase
             ]
         ]);
 
+    }
+
+    // data wrap collection
+    public function testDataWrapCollection(){
+        $this->seed([CategorySeeder::class, ProductSeeder::class]);
+
+        $response = $this->get('/api/products')
+        ->assertStatus(200);
+
+        $names = $response->json("rio.*.name"); // data.*.name
+        for($i = 0; $i < 5; $i++){
+            self::assertContains("Products $i of Food", $names);
+        }
+
+        for($i = 0; $i < 5; $i++){
+            self::assertContains("Products $i of Gadget", $names);
+        }
     }
 }
