@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Resources\CategoryResource;
 use App\Http\Resources\CategorySimpleResource;
 use App\Http\Resources\ProductCollection;
+use App\Http\Resources\ProductDebugResource;
 use App\Http\Resources\ProductResource;
 use App\Models\Product;
 
@@ -66,4 +67,10 @@ Route::get('/products-paging', function(Request $request){
     $page = $request->get('page', 1);
     $products = Product::paginate(perPage : 2, page : $page);
     return new ProductCollection($products);
+});
+
+// additional metadata
+Route::get('/products-debug/{id}', function($id){
+    $products = Product::find($id);
+    return new ProductDebugResource($products);
 });
