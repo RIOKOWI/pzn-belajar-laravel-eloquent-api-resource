@@ -52,7 +52,8 @@ Route::get('/categories-nested', function(){
 
 // DATA WRAP
 Route::get('/product/{id}', function($id){
-    $product = Product::find($id);
+    $product = Product::with('category')->first();
+    $product->load('category');
     return new ProductResource($product);
 });
 
@@ -79,4 +80,11 @@ Route::get('/products-debug/{id}', function($id){
 Route::get('/products-debug/dinamis/{id}', function($id){
     $products = Product::find($id);
     return new ProductDebugResource($products);
+});
+
+// conditional attributes
+Route::get("/products/{id}", function($id){
+    $product = Product::find($id);
+    $product->load('category');
+    return new ProductResource($product);
 });

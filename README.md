@@ -182,8 +182,10 @@ LINE 78-113
 
 contoh di file :
 
-ProductDebugResource.php
+ProductResource.php
+LINE 23-24
 api.php
-LINE 72-82
+LINE 55-56
+LINE 85-90
 ProductTest.php
-LINE 78-113
+LINE 22-48
