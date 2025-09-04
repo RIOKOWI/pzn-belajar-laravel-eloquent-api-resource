@@ -75,21 +75,40 @@ class ProductTest extends TestCase
         assertNotNull($response->json('meta'));
     }
 
-    // additional metadata
-    public function testDebug(){
+    // additional metadata statis
+    // public function testDebug(){
+    //     $this->seed([CategorySeeder::class, ProductSeeder::class]);
+
+    //     $product = Product::first();
+    //     $response = $this->get("/api/products-debug/$product->id")
+    //     ->assertStatus(200)
+    //     ->assertJson([
+    //         "author" => "Rio Achyar",
+    //         "data" => 
+    //         [ 
+    //             "id" => "$product->id",
+    //             "name" => "$product->name",
+    //             "price" => "$product->price"
+    //         ]
+    //     ]);
+    // }
+
+    // additional metadata dinamis
+    public function testDebugDinamis(){
         $this->seed([CategorySeeder::class, ProductSeeder::class]);
 
         $product = Product::first();
-        $response = $this->get("/api/products-debug/$product->id")
+        $response = $this->get("/api/products-debug/dinamis/$product->id")
         ->assertStatus(200)
         ->assertJson([
-            "author" => "Rio Achyar",
             "data" => 
             [ 
+                "author" => "Rio Achyar",
+                "server_time" => now()->toDateTimeString(),
                 "id" => "$product->id",
                 "name" => "$product->name",
                 "price" => "$product->price"
             ]
-         ]);
+        ]);
     }
 }

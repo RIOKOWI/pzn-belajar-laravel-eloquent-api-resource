@@ -7,9 +7,12 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 class ProductDebugResource extends JsonResource
 {
-    public $additional = [
-        "author" => 'Rio Achyar',
-    ];
+    // statis
+    // public $additional = [
+    //     "author" => 'Rio Achyar',
+    // ];
+
+    public static $wrap = 'data';
     /**
      * Transform the resource into an array.
      *
@@ -18,6 +21,8 @@ class ProductDebugResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
+            'author' => 'Rio Achyar',
+            'server_time' => now()->toDateTimeString(),
             'id' => $this->id,
             'name' => $this->name,
             'price' => $this->price,

@@ -74,3 +74,9 @@ Route::get('/products-debug/{id}', function($id){
     $products = Product::find($id);
     return new ProductDebugResource($products);
 });
+
+// additional metadata
+Route::get('/products-debug/dinamis/{id}', function($id){
+    $products = Product::find($id);
+    return new ProductDebugResource($products);
+});

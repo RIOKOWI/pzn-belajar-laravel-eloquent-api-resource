@@ -167,3 +167,23 @@ api.php
 LINE 64-69
 ProductTest.php
 LINE 66-76
+
+## ADDITIONAL METADATA
+
+contoh di file :
+
+ProductDebugResource.php
+api.php
+LINE 72-82
+ProductTest.php
+LINE 78-113
+
+## CONDITIONAL ATTRIBUTES
+
+contoh di file :
+
+ProductDebugResource.php
+api.php
+LINE 72-82
+ProductTest.php
+LINE 78-113
