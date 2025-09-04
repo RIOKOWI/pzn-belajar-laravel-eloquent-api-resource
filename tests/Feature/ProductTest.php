@@ -26,8 +26,9 @@ class ProductTest extends TestCase
 
         $product = Product::first();
 
-        $this->get("/api/product/$product->id")
+        $this->get("/api/products/$product->id")
         ->assertStatus(200)
+        ->assertHeader('Dibuat Oleh', 'Rio Achyar') // resource response
         ->assertJson([
             'value' => [
                 

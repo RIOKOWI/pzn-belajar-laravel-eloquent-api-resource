@@ -51,11 +51,10 @@ Route::get('/categories-nested', function(){
 });
 
 // DATA WRAP
-Route::get('/product/{id}', function($id){
-    $product = Product::with('category')->first();
-    $product->load('category');
-    return new ProductResource($product);
-});
+// Route::get('/product/{id}', function($id){
+//     $product = Product::all();
+//     return new ProductResource($product);
+// });
 
 // DATA WRAP COLLECTION
 Route::get('/products', function(){
@@ -86,5 +85,7 @@ Route::get('/products-debug/dinamis/{id}', function($id){
 Route::get("/products/{id}", function($id){
     $product = Product::find($id);
     $product->load('category');
-    return new ProductResource($product);
+    return (new ProductResource($product))
+    ->response()
+    ->header('Dibuat Oleh', 'Rio Achyar'); // resource response dinamis
 });
