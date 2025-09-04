@@ -8,7 +8,7 @@ use Illuminate\Http\Resources\Json\ResourceCollection;
 class ProductCollection extends ResourceCollection
 {
 
-    public static $wrap = 'rio';
+    public static $wrap = 'data';
     /**
      * Transform the resource collection into an array.
      *
@@ -17,7 +17,7 @@ class ProductCollection extends ResourceCollection
     public function toArray(Request $request): array
     {
         return [
-            'rio' => ProductResource::collection($this->collection),
+            'data' => ProductResource::collection($this->collection),
         ];
     }
 }

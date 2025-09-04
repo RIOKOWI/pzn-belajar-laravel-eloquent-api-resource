@@ -158,3 +158,12 @@ api.php
 LINE 58-62
 ProductTest.php
 LINE 47-62
+
+## PAGINATION
+
+contoh di file :
+
+api.php
+LINE 64-69
+ProductTest.php
+LINE 66-76

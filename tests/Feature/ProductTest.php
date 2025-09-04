@@ -10,6 +10,8 @@ use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 use function PHPUnit\Framework\assertContains;
+use function PHPUnit\Framework\assertNotNull;
+use function PHPUnit\Framework\assertNull;
 
 class ProductTest extends TestCase
 {
@@ -51,7 +53,7 @@ class ProductTest extends TestCase
         $response = $this->get('/api/products')
         ->assertStatus(200);
 
-        $names = $response->json("rio.*.name"); // data.*.name
+        $names = $response->json("data.*.name"); // rio.*.name bisa juga tap harus ganti di productcollection
         for($i = 0; $i < 5; $i++){
             self::assertContains("Products $i of Food", $names);
         }
@@ -59,5 +61,17 @@ class ProductTest extends TestCase
         for($i = 0; $i < 5; $i++){
             self::assertContains("Products $i of Gadget", $names);
         }
+    }
+
+    // data pagination
+    public function testPagination(){
+        $this->seed([CategorySeeder::class, ProductSeeder::class]);
+
+        $response = $this->get('/api/products-paging')
+        ->assertStatus(200);
+
+        assertNotNull($response->json('data'));
+        assertNotNull($response->json('links'));
+        assertNotNull($response->json('meta'));
     }
 }
