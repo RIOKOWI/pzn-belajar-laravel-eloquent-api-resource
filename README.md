@@ -189,3 +189,12 @@ LINE 55-56
 LINE 85-90
 ProductTest.php
 LINE 22-48
+
+## RESOURCE RESPONSE
+
+contoh di file :
+
+ProductCollection.php
+LINE 25-29
+ProductTest.php
+LINE 56

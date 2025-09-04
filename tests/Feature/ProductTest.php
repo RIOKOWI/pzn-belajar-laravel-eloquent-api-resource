@@ -52,7 +52,8 @@ class ProductTest extends TestCase
         $this->seed([CategorySeeder::class, ProductSeeder::class]);
 
         $response = $this->get('/api/products')
-        ->assertStatus(200);
+        ->assertStatus(200)
+        ->assertHeader('Powered-By', 'Rio Achyar'); // resource response
 
         $names = $response->json("data.*.name"); // rio.*.name bisa juga tap harus ganti di productcollection
         for($i = 0; $i < 5; $i++){
